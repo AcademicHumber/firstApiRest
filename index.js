@@ -19,7 +19,7 @@
   * CONEXIÓN A LA DB
   */
  
-  mongoose.connect("mongoDB:SirHumber:Fernandezahft1701@sirhumber.xpmtf.mongodb.net/mongoDB", (error, res) =>{
+  mongoose.connect("mongodb+srv://SirHumber:Fernandezahft1701@sirhumber.xpmtf.mongodb.net/mongoDB", (error, res) =>{
 
   if (error) {
       
