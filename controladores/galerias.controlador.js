@@ -94,8 +94,16 @@ function crearFoto(req, res){
             }
             else{
 
-                var antiguaImagen = capturarFoto.foto;
-                var rutaImagen = "./ficheros/galeria/" + antiguaImagen;
+                var rutaFoto = req.files.foto.path;
+
+                /**
+                 * Hay un bug que el split() no sirve en servidor, así que para esta situacion se toman los ultimos
+                 * 28 caracteres de la ruta, ya que esos pertenecen al archivo
+                 */
+                // var nombreFoto = rutaFoto.split("\\");       
+
+                galeria.foto = rutaFoto.substr(-28);
+
                 fs.unlink(rutaImagen,(error)=>{
                     if (error) {
                         
@@ -131,7 +139,7 @@ function crearFoto(req, res){
     
    }
 
-      /**
+    /**
     * Ver imagen
     */
    function verImg(req, res){
