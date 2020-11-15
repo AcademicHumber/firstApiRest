@@ -31,6 +31,7 @@ function crearFoto(req, res){
         // var nombreFoto = rutaFoto.split("\\");       
 
         galeria.foto = rutaFoto.substr(-28);
+        console.log(galeria.foto);
         
             
             galeria.save((error, fotoGuardada)=>{
