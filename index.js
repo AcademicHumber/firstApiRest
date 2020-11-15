@@ -19,7 +19,7 @@
   * CONEXIÓN A LA DB
   */
  
-  mongoose.connect("mongodb://localhost:27017/mongodb", (error, res) =>{
+  mongoose.connect("mongoDB:SirHumber:Fernandezahft1701@sirhumber.xpmtf.mongodb.net/mongoDB", (error, res) =>{
 
   if (error) {
       
@@ -31,7 +31,7 @@
 
     app.listen(port, function(){
 
-        console.log("Servidor del ApiRest en http://localhost:" + port);
+        console.log("Servidor del ApiRest en sirhumber.xpmtf.mongodb.net/mongoDB:" + port);
     })
   }
 
