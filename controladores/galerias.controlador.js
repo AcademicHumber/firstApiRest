@@ -23,9 +23,14 @@ function crearFoto(req, res){
     if(req.files){
 
         var rutaFoto = req.files.foto.path;
-        var nombreFoto = rutaFoto.split("\\");
 
-        galeria.foto = nombreFoto[2];
+        /**
+         * Hay un bug que el split() no sirve en servidor, así que para esta situacion se toman los ultimos
+         * 28 caracteres de la ruta, ya que esos pertenecen al archivo
+         */
+        // var nombreFoto = rutaFoto.split("\\");       
+
+        galeria.foto = rutaFoto.substr(-28);
         
             
             galeria.save((error, fotoGuardada)=>{
