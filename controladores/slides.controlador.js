@@ -34,9 +34,11 @@ const path = require("path")
     if(req.files){
 
         var rutaImagen = req.files.imagen.path;
-        var nombreImagen = rutaImagen.split("\\");
 
-        slides.imagen = nombreImagen[2];
+        //var nombreImagen = rutaImagen.split("\\");
+
+        slides.imagen = rutaImagen.substr(-28);
+        console.log(slides.imagen);
 
         if (slides.titulo != null && slides.descripcion != null) {
             
