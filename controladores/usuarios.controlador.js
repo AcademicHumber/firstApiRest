@@ -43,9 +43,9 @@ function crearUsuarios(req, res){
                 usuarios.save((error, usuarioGuardado)=>{
 
                     if(error){
-            
-                        res.status(500).send({mensaje: "Error al guardar el usuarios"});
+
                         console.log(error);
+                        res.status(500).send({mensaje: "Error al guardar el usuarios", error: error});                        
                     }
                     else{
             
