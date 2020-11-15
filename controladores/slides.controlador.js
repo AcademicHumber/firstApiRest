@@ -38,7 +38,6 @@ const path = require("path")
         //var nombreImagen = rutaImagen.split("\\");
 
         slides.imagen = rutaImagen.substr(-28);
-        console.log(slides.imagen);
 
         if (slides.titulo != null && slides.descripcion != null) {
             
@@ -115,10 +114,11 @@ const path = require("path")
 
         if (req.files) {
             
-            var imagenRuta = req.files.imagen.path;
-            var nombreImagen = imagenRuta.split("\\");
+            var rutaImagen = req.files.imagen.path;
 
-            slides.imagen = nombreImagen[2];
+            //var nombreImagen = rutaImagen.split("\\");
+
+            slides.imagen = rutaImagen.substr(-28);
 
             var antiguaImagen = parametros.rutaImagenActual;
             var rutaImagen = "./ficheros/slide/" + antiguaImagen;
